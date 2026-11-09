@@ -2,10 +2,13 @@
 # Major Opcode: CUSTOM-0 (6..0=0x0B)
 
 # --- Matrix Memory Instructions ---
-# RVMLoadStore: 31..29=000, 25=0, 10..7=0000
-mld.lhs  mds3  rs1  rs2  31..25=0x08  10..7=0x0  6..0=0x0B
-mld.rhs  mds3  rs1  rs2  31..25=0x02  10..7=0x0  6..0=0x0B
-mst  mds3  rs1  rs2  31..25=0x04  10..7=0x0  6..0=0x0B
+# RVMLoadStore: 31..30=00, 29=25=t, 10..7=0000
+mld.cw.lhs  mds3  rs1  rs2  31..25=0x08  10..7=0x0  6..0=0x0B
+mld.rw.rhs  mds3  rs1  rs2  31..25=0x02  10..7=0x0  6..0=0x0B
+mst.rw  mds3  rs1  rs2  31..25=0x04  10..7=0x0  6..0=0x0B
+mld.rw.lhs  mds3  rs1  rs2  31..25=0x19  10..7=0x0  6..0=0x0B
+mld.cw.rhs  mds3  rs1  rs2  31..25=0x13  10..7=0x0  6..0=0x0B
+mst.cw  mds3  rs1  rs2  31..25=0x15  10..7=0x0  6..0=0x0B
 
 # --- Matrix Arithmetic Instructions ---
 # RVMArithBase: 31..29=001, 25=0, 14..11=0000, 10..7=0000
